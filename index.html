@@ -8,7 +8,7 @@
   <body>
 
     <div id="exercise">
-      {{ message }}
+      <button type="button" name="button" v-on:click="showAlert">Show Alert</button>
     </div>
 
     <script type="text/javascript">
@@ -16,6 +16,11 @@
         el: '#exercise',
         data: {
           message: 'Hello World'
+        },
+        methods: {
+          showAlert: function() {
+            alert('Alert Showing');
+          }
         }
       });
     </script>
