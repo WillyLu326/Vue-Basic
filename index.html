@@ -13,13 +13,18 @@
 
       <input type="text" v-bind:value="value1" v-on:keydown="keyDown1($event)">
       {{ value1 }}
+
+      <br>
+      <input type="text" v-bind:value="value2" v-on:keydown.enter="keyDown2($event)">
+      {{ value2 }}
     </div>
 
     <script type="text/javascript">
       new Vue({
         el: '#exercise',
         data: {
-          value1: ''
+          value1: '',
+          value2: ''
         },
         methods: {
           showAlert: function() {
@@ -27,6 +32,9 @@
           },
           keyDown1: function(event) {
             this.value1 = event.target.value;
+          },
+          keyDown2: function(event) {
+            this.value2 = event.target.value;
           }
         }
       });
