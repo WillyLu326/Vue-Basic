@@ -17,6 +17,11 @@
       <br>
       <input type="text" v-bind:value="value2" v-on:keydown.enter="keyDown2($event)">
       {{ value2 }}
+
+      <br>
+      <input type="text" v-model="name">
+      <div> {{ name }} </div>
+
     </div>
 
     <script type="text/javascript">
@@ -24,7 +29,8 @@
         el: '#exercise',
         data: {
           value1: '',
-          value2: ''
+          value2: '',
+          name: 'Willy'
         },
         methods: {
           showAlert: function() {
