@@ -3,8 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>VueJS</title>
+    <script type="text/javascript" src="./vue.js"></script>
   </head>
   <body>
+
+    <div id="exercise">
+      {{ message }}
+    </div>
+
+    <script type="text/javascript">
+      new Vue({
+        el: '#exercise',
+        data: {
+          message: 'Hello World'
+        }
+      });
+    </script>
 
   </body>
 </html>
