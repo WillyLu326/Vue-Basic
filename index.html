@@ -21,7 +21,14 @@
       <br>
       <input type="text" v-model="name">
       <div> {{ name }} </div>
+      <br>
 
+      <button type="button" name="button" v-on:click="counter++">InCrease</button>
+      <button type="button" name="button" v-on:click="counter--">Decrease</button>
+      {{ counter }} | {{ result() }} || {{ output }}
+
+      <button type="button" name="button" v-on:click="secondaryCounter++">Increase Secondary Counter</button>
+      {{ secondaryCounter }}
     </div>
 
     <script type="text/javascript">
@@ -30,7 +37,15 @@
         data: {
           value1: '',
           value2: '',
-          name: 'Willy'
+          name: 'Willy',
+          counter: 0,
+          secondaryCounter: 0
+        },
+        computed: {
+          output: function() {
+            console.log('output');
+            return this.counter > 5 ? 'Greater than 5' : 'Less or Equal to 5';
+          }
         },
         methods: {
           showAlert: function() {
@@ -41,6 +56,10 @@
           },
           keyDown2: function(event) {
             this.value2 = event.target.value;
+          },
+          result: function() {
+            console.log('result')
+            return this.counter > 5 ? 'Greater than 5' : 'Less or Equal to 5';
           }
         }
       });
